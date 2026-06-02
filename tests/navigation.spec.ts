@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Navigation", () => {
-  test("should find the Vercel deploy link", async ({ page }) => {
+  test("should display welcome heading on homepage", async ({ page }) => {
     await page.goto("/");
-    const deployLink = page.getByRole("link", { name: /deploy/i });
-    await expect(deployLink).toBeVisible();
+    const heading = page.getByRole("heading", { name: /Welcome to jef/i });
+    await expect(heading).toBeVisible();
   });
 });
